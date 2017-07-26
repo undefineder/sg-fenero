@@ -58,7 +58,7 @@
 					<ul class="nav navbar-nav navbar-right" style="margin-top: 20px;">
 						<li><a href="javascript:gotoHome()" class="section-scroll"><i class="fa fa-home"></i> Home</a></li>
 						<li class="dropdown">
-							<a href="javascript:gotoAboutUs('vision')" class="dropdown-toggle section-scroll" data-toggle="dropdown"> About Us</a>
+							<a onclick="gotoAboutUs('vision')" class="dropdown-toggle section-scroll" data-toggle="dropdown"> About Us</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="javascript:gotoAboutUs('about')" class="section-scroll"><i class="fa fa-eye"></i> Vision & Misson</a></li>
 								<li><a href="javascript:gotoAboutUs('fenero')" class="section-scroll"><i class="fa fa-university"></i> SG Fenero</a></li>
@@ -68,7 +68,7 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="javascript:gotoWhatWeDo('session-top')" class="dropdown-toggle section-scroll" data-toggle="dropdown"> What We Do</a>
+							<a onclick="gotoWhatWeDo('session-top')" class="dropdown-toggle section-scroll" data-toggle="dropdown"> What We Do</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="javascript:gotoWhatWeDo('session')" class="section-scroll"><i class="fa  fa-book"></i> Session</a></li>
 								<li><a href="javascript:gotoWhatWeDo('careerDevelopment')" class="section-scroll"><i class="fa fa-arrow-up"></i> Career Development</a></li>
@@ -76,7 +76,7 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="javascript:gotoRecruiting('joinUs')" class="dropdown-toggle section-scroll" data-toggle="dropdown"> Recruiting</a>
+							<a onclick="gotoRecruiting('joinUs')" class="dropdown-toggle section-scroll" data-toggle="dropdown"> Recruiting</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="javascript:gotoRecruiting('lookFor')" class="section-scroll"><i class="fa  fa-book"></i> Who We Look For</a></li>
 								<li><a href="javascript:gotoRecruiting('recruiting')" class="section-scroll"><i class="fa fa-child"></i> Recruiting Process</a></li>
@@ -85,7 +85,7 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="javascript:gotoNight('introduction-main')" class="dropdown-toggle section-scroll" data-toggle="dropdown"> Finance Night</a>
+							<a onclick="gotoNight('introduction-main')" class="dropdown-toggle section-scroll" data-toggle="dropdown"> Finance Night</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="javascript:gotoNight('introduction')" class="section-scroll"><i class="fa fa-dollar"></i> Introduction</a></li>
 								<li><a href="javascript:gotoNight('f_greetings')" class="section-scroll"><i class="fa fa-microphone"></i> Greetings</a></li>
@@ -95,7 +95,7 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="javascript:gotoCareers('career')" class="dropdown-toggle section-scroll" data-toggle="dropdown"> Careers</a>
+							<a onclick="gotoCareers('career')" class="dropdown-toggle section-scroll" data-toggle="dropdown"> Careers</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="javascript:gotoCareers('overview')" class="section-scroll"><i class="fa  fa-sitemap"></i> Career Overview</a></li>
 								<li><a href="javascript:gotoCareers('members')" class="section-scroll"><i class="fa fa-users"></i> Members</a></li>
@@ -185,37 +185,38 @@
 			gotoHome();
 		});
 
+	device = 'mobile'
 	function gotoHome() {
-		$("#contents").load("templete/home.html", function() {
+		$("#contents").load("templete/" + device +"/home.html", function() {
 			$(document).trigger('_page_ready');
 		});
 	}
 	function gotoAboutUs(Id) {
-		$("#contents").load("templete/about-us.html", function() {
+		$("#contents").load("templete/" + device +"/about-us.html", function() {
 			$(document).trigger('_page_ready');
 			window.location.href = '#' + Id
 		});
 	}
 	function gotoWhatWeDo(Id) {
-		$("#contents").load("templete/what-we-do.html", function() {
+		$("#contents").load("templete/" + device +"/what-we-do.html", function() {
 			$(document).trigger('_page_ready');
 			window.location.href = '#' + Id
 		});
 	}
 	function gotoRecruiting(Id) {
-		$("#contents").load("templete/recruting.html", function() {
+		$("#contents").load("templete/" + device +"/recruting.html", function() {
 			$(document).trigger('_page_ready');
 			window.location.href = '#' + Id
 		});
 	}
 	function gotoNight(Id) {
-		$("#contents").load("templete/finance-night.html", function() {
+		$("#contents").load("templete/" + device +"/finance-night.html", function() {
 			$(document).trigger('_page_ready');
 			window.location.href = '#' + Id
 		});
 	}
 	function gotoCareers(Id) {
-		$("#contents").load("templete/careers.html", function() {
+		$("#contents").load("templete/" + device +"/careers.html", function() {
 			$(document).trigger('_page_ready');
 			window.location.href = '#' + Id
 		});
@@ -262,7 +263,7 @@
 	$(function(){
 		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 			$('#navbar').css('width', '414px');
-
+			device = 'mobile'
 		} else {
 			$('.popup-modal').click();
 		}
