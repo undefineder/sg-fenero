@@ -114,19 +114,17 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-8">
-						<p class="copyright font-alt">Designed by Jinyoung Kim, Yoonhwang Lee / © 2015 <a href="index.html">SG Fenero</a>, All Rights Reserved.</p>
+						<p class="copyright font-alt">Designed by Jinyoung Kim, Yoonhwang Lee <br/> © 2015 <a href="index.html">SG Fenero</a>, All Rights Reserved.</p>
 					</div>
 					<div class="col-sm-4">
 						<div class="footer-social-links">
 							<a href="https://www.facebook.com/sgfenero"><i class="fa fa-facebook"></i></a>
 						</div>
 					</div>
-
 				</div><!-- .row -->
-
-				</div>
-			</footer>
-			<!-- Footer end -->
+			</div>
+		</footer>
+		<!-- Footer end -->
 
 		</div>
 		<!-- Wrapper start -->
@@ -185,7 +183,7 @@
 			gotoHome();
 		});
 
-	device = 'mobile'
+	device = 'pc'
 	function gotoHome() {
 		$("#contents").load("templete/" + device +"/home.html", function() {
 			$(document).trigger('_page_ready');
