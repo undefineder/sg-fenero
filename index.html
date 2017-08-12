@@ -110,23 +110,25 @@
 		<div id="contents"></div>
 
 		<!-- Footer start -->
-		<footer class="footer bg-dark" style="margin-top:50px;">
+		<footer class="footer bg-dark pc_footer" style="margin-top:50px;">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-8">
-						<p class="copyright font-alt">Designed by Jinyoung Kim, Yoonhwang Lee <br/> © 2015 <a href="index.html">SG Fenero</a>, All Rights Reserved.</p>
+					<div class="col-sm-12">
+						<p class="copyright font-alt">Designed by Jinyoung Kim, Yoonhwang Lee © 2015 <a href="index.html">SG Fenero</a>, All Rights Reserved.&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.facebook.com/sgfenero"><i class="fa fa-facebook"></i></a></p></p>
 					</div>
-					<div class="col-sm-4">
-						<div class="footer-social-links">
-							<a href="https://www.facebook.com/sgfenero"><i class="fa fa-facebook"></i></a>
-						</div>
+				</div><!-- .row -->
+			</div>
+		</footer>
+		<footer class="footer bg-dark mo_footer" style="padding:0px 0;">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<p class="copyright font-alt">© 2015 <a href="index.html">SG Fenero</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.facebook.com/sgfenero"><i class="fa fa-facebook"></i></a></p>
 					</div>
 				</div><!-- .row -->
 			</div>
 		</footer>
 		<!-- Footer end -->
-
-		</div>
 		<!-- Wrapper start -->
 
 		<!-- Scroll-up -->
@@ -179,9 +181,22 @@
 	<script src="assets/js/owl.carousel.min.js"></script>
 	<script src="assets/js/custom.js"></script>
 	<script type="text/javascript">
-		$(document).ready( function() {
-			gotoHome();
-		});
+
+	$(document).ready( function() {
+		if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+			$('#navbar').css('width', window.innerWidth);
+			$('.mo_footer').css('display', 'block');
+			$('.pc_footer').css('display', 'none');
+			device = 'mobile'
+			console.log('1122')
+		} else {
+			console.log('11')
+			$('.mo_footer').css('display', 'none');
+			$('.pc_footer').css('display', 'block');
+			$('.popup-modal').click();
+		}
+		gotoHome();
+	});
 
 	device = 'pc'
 	function gotoHome() {
@@ -257,15 +272,6 @@
 		e.preventDefault();
 		$.magnificPopup.close();
 	});
-
-	$(function(){
-		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-			$('#navbar').css('width', '414px');
-			device = 'mobile'
-		} else {
-			$('.popup-modal').click();
-		}
- 	});
 
 	</script>
 </body>

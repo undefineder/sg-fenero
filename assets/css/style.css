@@ -12,7 +12,9 @@ Version: 1.4
 /* ------------------------------------------------------------------
 General Styles
 ------------------------------------------------------------------- */
-
+@media only screen and (max-width: 760px) {
+  #some-element { display: none; }
+}
 html {
 	overflow-y: scroll;
 	overflow-x: hidden;
@@ -1164,8 +1166,8 @@ Price-tables
 .price-table {
 	background: #fff;
 	border: 1px solid #eaeaea;
-	padding: 25px 20px;
-	margin: 15px 0 30px;
+	padding: 10px 8px;
+	margin: 8px 0 20px;
 	border-radius: 2px;
 	text-align: center;
 }
