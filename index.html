@@ -91,7 +91,7 @@
 								<li><a href="javascript:gotoNight('f_greetings')" class="section-scroll"><i class="fa fa-microphone"></i> Greetings</a></li>
 								<li><a href="javascript:gotoNight('f_history')" class="section-scroll"><i class="fa  fa-header"></i> History</a></li>
 								<li><a href="javascript:gotoNight('alumni')" class="section-scroll"><i class="fa fa-trophy"></i> Alumni List</a></li>
-								<li><a href="javascript:gotoNight('f_pictures')" class="section-scroll"><i class="fa fa-puzzle-piece"></i> Pictures</a></li>
+								<li class="hidden_f_pictures"><a href="javascript:gotoNight('f_pictures')" class="section-scroll"><i class="fa fa-puzzle-piece"></i> Pictures</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -114,7 +114,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<p class="copyright font-alt">Designed by Jinyoung Kim, Yoonhwang Lee © 2015 <a href="index.html">SG Fenero</a>, All Rights Reserved.&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.facebook.com/sgfenero"><i class="fa fa-facebook"></i></a></p></p>
+						<center>
+							<p class="copyright font-alt" style="vertical-align: middle;">Designed by Jinyoung Kim, Yoonhwang Lee, Jihyung Lee © <a href="index.html">SG Fenero</a>, All Rights Reserved.&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.facebook.com/sgfenero"><i class="fa fa-facebook"></i></a></p></p>
+						</center>
 					</div>
 				</div><!-- .row -->
 			</div>
@@ -123,7 +125,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
-						<p class="copyright font-alt">© 2015 <a href="index.html">SG Fenero</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.facebook.com/sgfenero"><i class="fa fa-facebook"></i></a></p>
+						<p class="copyright font-alt">© <a href="index.html">SG Fenero</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.facebook.com/sgfenero"><i class="fa fa-facebook"></i></a></p>
 					</div>
 				</div><!-- .row -->
 			</div>
@@ -183,14 +185,13 @@
 	<script type="text/javascript">
 
 	$(document).ready( function() {
-		if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+		if((window.innerWidth <= 1024 && window.innerHeight <= 1366) || window.innerHeight > window.innerWidth) {
 			$('#navbar').css('width', window.innerWidth);
 			$('.mo_footer').css('display', 'block');
 			$('.pc_footer').css('display', 'none');
+			$('.hidden_f_pictures').css('display', 'none');			
 			device = 'mobile'
-			console.log('1122')
 		} else {
-			console.log('11')
 			$('.mo_footer').css('display', 'none');
 			$('.pc_footer').css('display', 'block');
 			$('.popup-modal').click();
